@@ -1,0 +1,81 @@
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+h1, h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    color: #718096;
+    line-height: 1.6;
+}
+
+
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+
+.section-divider {
+    height: 2px;
+    background: white;
+    opacity: 0.3;
+    margin: 3rem 0;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MyBrand</div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Responsive Design</h1>
+        <p>This webpage adapts beautifully to any screen size. Try resizing your browser window or viewing on different devices!</p>
+    </section>
+
+    <section class="content">
+        <h2>Our Features</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Mobile First</h3>
+                <p>Designed with mobile devices in mind, ensuring a great experience on smartphones and tablets.</p>
+            </div>
+            <div class="card">
+                <h3>Flexible Grid</h3>
+                <p>Content automatically adjusts and reorganizes based on available screen space.</p>
+            </div>
+            <div class="card">
+                <h3>Touch Friendly</h3>
+                <p>Navigation and interactive elements are optimized for touch screens.</p>
+            </div>
+            <div class="card">
+                <h3>Fast Loading</h3>
+                <p>Optimized performance across all devices with efficient code and assets.</p>
+            </div>
+            <div class="card">
+                <h3>Modern Design</h3>
+                <p>Clean, contemporary aesthetics that work across all platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Accessible</h3>
+                <p>Built with accessibility standards to ensure everyone can use our site.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MyBrand. Built with responsive design principles.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
