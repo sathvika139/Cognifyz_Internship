@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <div class="container">
+        <h1 class="main-title">🎨 Neumorphic Gallery</h1>
+
+        <!-- AUTOMATIC SLIDESHOW -->
+        <div class="slideshow-section card">
+            <h2>🎬 Auto Slideshow</h2>
+            <div class="slideshow-container">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Mountain Landscape">
+                    <div class="slide-caption">Majestic Mountains</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="Beach Sunset">
+                    <div class="slide-caption">Tropical Paradise</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=800" alt="Forest Path">
+                    <div class="slide-caption">Enchanted Forest</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLICKABLE THUMBNAIL GALLERY -->
+        <div class="gallery-section card">
+            <div class="gallery-header">
+                <h2>🖼️ Click to Enlarge Gallery</h2>
+                <button class="add-photo-btn card-small" onclick="openUploadModal()">
+                    <span class="plus-icon">+</span>
+                    <span>Add Photo</span>
+                </button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item card-small" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Nature Scene">
+                    <div class="gallery-overlay">Nature's Beauty</div>
+                </div>
+                <div class="gallery-item card-small" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400" alt="Misty Valley">
+                    <div class="gallery-overlay">Misty Valley</div>
+                </div>
+                <div class="gallery-item card-small" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Woodland Path">
+                    <div class="gallery-overlay">Woodland Path</div>
+                </div>
+                <div class="gallery-item card-small" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=400" alt="Mountain Peak">
+                    <div class="gallery-overlay">Mountain Peak</div>
+                </div>
+                <div class="gallery-item card-small" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400" alt="Desert Dunes">
+                    <div class="gallery-overlay">Desert Dunes</div>
+                </div>
+                <div class="gallery-item card-small" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400" alt="Ocean Waves">
+                    <div class="gallery-overlay">Ocean Waves</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE VIEW MODAL -->
+    <div class="modal" id="imageModal" onclick="closeModal(event)">
+        <div class="modal-content card">
+            <span class="close-modal" onclick="closeModal(event)">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <!-- UPLOAD PHOTO MODAL -->
+    <div class="modal" id="uploadModal" onclick="closeUploadModal(event)">
+        <div class="upload-content card">
+            <span class="close-modal" onclick="closeUploadModal(event)">&times;</span>
+            <h2>📸 Add Your Photo</h2>
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
+                <div class="upload-placeholder">
+                    <span class="upload-icon">📁</span>
+                    <p>Click or drag & drop your image here</p>
+                    <p class="upload-hint">Supports: JPG, PNG, GIF</p>
+                </div>
+                <img id="previewImage" class="preview-image" style="display: none;">
+            </div>
+            <div class="upload-form">
+                <input type="text" id="photoCaption" class="caption-input card-small" placeholder="Enter photo caption...">
+                <button class="upload-btn card-small" onclick="addPhotoToGallery()">
+                    ✓ Add to Gallery
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

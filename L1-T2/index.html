@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>JavaScript Basics - Interactive Tasks</h1>
+
+    <!-- Task 1: Color Changing Button -->
+    <div class="task">
+        <h2>Task 1: Color Changing Button</h2>
+        <p>Click the button below to change its color randomly!</p>
+        <button id="colorButton" onclick="changeColor()">Click Me to Change Color!</button>
+    </div>
+
+    <!-- Task 2: Time-Based Greeting -->
+    <div class="task">
+        <h2>Task 2: Time-Based Greeting</h2>
+        <p>Click the button to get a greeting based on the current time of day.</p>
+        <button id="greetingButton" onclick="showGreeting()">Show Greeting</button>
+    </div>
+
+    <!-- Task 3: Simple Calculator -->
+    <div class="task">
+        <h2>Task 3: Simple Addition Calculator</h2>
+        <p>Enter two numbers and click Calculate to see their sum.</p>
+        <div class="input-group">
+            <label for="num1">Number 1:</label>
+            <input type="number" id="num1" placeholder="Enter first number">
+            <label for="num2">Number 2:</label>
+            <input type="number" id="num2" placeholder="Enter second number">
+            <button id="calculateButton" onclick="calculate()">Calculate</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
